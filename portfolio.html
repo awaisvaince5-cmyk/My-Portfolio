@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio | Web Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --secondary: #00e5ff;
+            --dark: #0f172a;
+            --light: #e5e7eb;
+            --card: #111827;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #020617, #020617, #020617);
+            color: var(--light);
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            z-index: 1000;
+        }
+
+        nav h1 {
+            color: var(--secondary);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--light);
+            font-weight: 500;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 100px 50px;
+        }
+
+        .hero-text {
+            max-width: 500px;
+            animation: slideLeft 1.5s ease;
+        }
+
+        .hero-text h2 {
+            font-size: 42px;
+            color: var(--secondary);
+        }
+
+        .hero-text h1 {
+            font-size: 52px;
+            margin: 10px 0;
+        }
+
+        .hero-text p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #cbd5f5;
+        }
+
+        .hero-text button {
+            margin-top: 30px;
+            padding: 14px 30px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero-text button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--secondary);
+        }
+
+        /* IMAGE CIRCLE */
+        .hero-img {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: glow 3s infinite alternate;
+        }
+
+        .hero-img img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid var(--dark);
+        }
+
+        /* SKILLS SECTION */
+        section {
+            padding: 100px 60px;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 50px;
+            color: var(--secondary);
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.4s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(0,229,255,0.3);
+        }
+
+        .skill-card h3 {
+            margin-top: 15px;
+            color: var(--secondary);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #020617;
+            color: #94a3b8;
+        }
+
+        /* ANIMATIONS */
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 30px var(--primary);
+            }
+            to {
+                box-shadow: 0 0 60px var(--secondary);
+            }
+        }
+
+        @keyframes slideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                padding: 15px 30px;
+            }
+        }
+        .social-icons {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icons a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #020617;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #fff;
+    transition: 0.4s;
+}
+
+/* Individual colors */
+.social-icons .tiktok {
+    box-shadow: 0 0 10px #69c9d0;
+}
+
+.social-icons .youtube {
+    box-shadow: 0 0 10px #ff0000;
+}
+
+.social-icons .facebook {
+    box-shadow: 0 0 10px #1877f2;
+}
+
+/* Hover Effects */
+.social-icons a:hover {
+    transform: translateY(-8px) scale(1.1);
+}
+
+.social-icons .tiktok:hover {
+    background: #69c9d0;
+    box-shadow: 0 0 25px #69c9d0;
+}
+
+.social-icons .youtube:hover {
+    background: #ff0000;
+    box-shadow: 0 0 25px #ff0000;
+}
+
+.social-icons .facebook:hover {
+    background: #1877f2;
+    box-shadow: 0 0 25px #1877f2;
+}
+contact-section {
+    background: linear-gradient(135deg, #020617, #020617);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.contact-info {
+    background: #111827;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(0,229,255,0.1);
+}
+
+.contact-info h3 {
+    color: var(--secondary);
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+
+.contact-info p {
+    color: #cbd5f5;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.info-box i {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* FORM */
+.contact-form {
+    background: #020617;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(108,99,255,0.15);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    background: #111827;
+    color: #fff;
+    font-size: 15px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #94a3b8;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.contact-form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--secondary);
+}
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h1>MyPortfolio</h1>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h2>Hello, I'm Awais,</h2>
+        <h1>Web Developer</h1>
+        <p>
+            I design and develop modern, responsive, and high-quality websites
+            using the latest technologies. I love creating clean UI and powerful backends.
+        </p>
+        <button>Hire Me</button>
+    </div>
+
+    <div class="hero-img">
+        <img src="1975.png" alt="My Photo">
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <h2 class="title">My Skills</h2>
+
+    <div class="skills">
+        <div class="skill-card">
+            <h3>HTML</h3>
+            <p>Semantic & SEO-friendly structure</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>CSS</h3>
+            <p>Modern UI, animations & responsiveness</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>JavaScript</h3>
+            <p>Interactive & dynamic functionality</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>PHP</h3>
+            <p>Backend logic & server-side scripting</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>MySQL</h3>
+            <p>Database design & management</p>
+        </div>
+    </div>
+</section>
+ <section id="contact" class="contact-section">
+    <h2 class="title">Contact Me</h2>
+
+    <div class="contact-container">
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <h3>Let’s Work Together</h3>
+            <p>
+                Have a project in mind or want to collaborate?  
+                Feel free to send me a message. I’ll reply as soon as possible.
+            </p>
+
+            <div class="info-box">
+                <i class="fas fa-envelope"></i>
+                <span>awaisvaince5@gmail.com</span>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-phone"></i>
+                <span>+92 301 5487421</span>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-location-dot"></i>
+                <span>Pakistan</span>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+    <div class="social-icons">
+        <a href="#" class="tiktok"><i class="fab fa-tiktok"></i></a>
+        <a href="www.youtube.com/@SkyShineTv" class="youtube"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <p>© 2025 | Designed & Developed by Awais</p>
+</footer>
+
+
+<script>
+    // Simple scroll animation effect
+    window.addEventListener('scroll', () => {
+        document.querySelectorAll('.skill-card').forEach(card => {
+            const position = card.getBoundingClientRect().top;
+            if (position < window.innerHeight - 100) {
+                card.style.opacity = 1;
+                card.style.transform = 'translateY(0)';
+            }
+        });
+    });
+    document.querySelector('.contact-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert("Message sent successfully!");
+    this.reset();
+});
+</script>
+
+</body>
+</html>
